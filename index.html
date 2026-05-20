@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banco Inbursa — Painel de Termos de Quitação</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Georgia&display=swap');
+
+    :root {
+      --primary: #004b87;
+      --accent: #c9a84c;
+      --bg: #0b1528;
+      --card-bg: rgba(255, 255, 255, 0.03);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text: #ffffff;
+      --text-muted: #8fa0dd;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at 50% 0%, #15294a, var(--bg));
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .brand {
+      font-family: 'Georgia', serif;
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .brand span {
+      color: var(--accent);
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 25px;
+    }
+
+    @media (min-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 30px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(201, 168, 76, 0.3);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .card-header {
+      margin-bottom: 20px;
+    }
+
+    .client-name {
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+      letter-spacing: -0.5px;
+    }
+
+    .client-meta {
+      font-size: 11px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .card-info {
+      background: rgba(0, 0, 0, 0.15);
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 25px;
+      border-left: 3px solid var(--accent);
+    }
+
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+
+    .info-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .info-label {
+      color: var(--text-muted);
+    }
+
+    .info-value {
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .card-actions {
+      display: flex;
+      gap: 12px;
+    }
+
+    .btn {
+      flex: 1;
+      text-align: center;
+      padding: 12px 15px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+
+    .btn-signed {
+      background: var(--primary);
+      color: #fff;
+      border: 1px solid transparent;
+      box-shadow: 0 4px 12px rgba(0, 75, 135, 0.3);
+    }
+
+    .btn-signed:hover {
+      background: #00569c;
+      transform: translateY(-1px);
+    }
+
+    .btn-unsigned {
+      background: transparent;
+      color: var(--text-muted);
+      border: 1px solid var(--card-border);
+    }
+
+    .btn-unsigned:hover {
+      border-color: #fff;
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      font-size: 11px;
+      color: var(--text-muted);
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div class="brand">Banco <span>Inbursa</span></div>
+      <div class="subtitle">Central de Emissão de Termos de Quitação</div>
+    </header>
+
+    <div class="grid">
+      <!-- MAURO VIDAL -->
+      <div class="card">
+        <div class="card-header">
+          <div class="client-name">MAURO ALIADER M. VIDAL</div>
+          <div class="client-meta">CPF: 997.108.468-68</div>
+        </div>
+        
+        <div class="card-info">
+          <div class="info-row">
+            <span class="info-label">Dívida Original:</span>
+            <span class="info-value">R$ 20.488,05</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Valor de Quitação:</span>
+            <span class="info-value" style="color: var(--accent);">R$ 14.765,86</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Desconto Realizado:</span>
+            <span class="info-value" style="color: #4cd964;">R$ 5.722,19</span>
+          </div>
+        </div>
+
+        <div class="card-actions">
+          <a href="devolucao_inbursa_mauro.html" target="_blank" class="btn btn-signed">Com Assinatura</a>
+          <a href="devolucao_inbursa_mauro_sem_assinatura.html" target="_blank" class="btn btn-unsigned">Sem Assinatura</a>
+        </div>
+      </div>
+
+      <!-- EGILDO GONÇALVES -->
+      <div class="card">
+        <div class="card-header">
+          <div class="client-name">EGILDO O. GONÇALVES</div>
+          <div class="client-meta">CPF: 339.722.305-91</div>
+        </div>
+        
+        <div class="card-info">
+          <div class="info-row">
+            <span class="info-label">Dívida Original:</span>
+            <span class="info-value">R$ 32.956,02</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Valor de Quitação:</span>
+            <span class="info-value" style="color: var(--accent);">R$ 28.832,50</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Desconto Realizado:</span>
+            <span class="info-value" style="color: #4cd964;">R$ 4.123,52</span>
+          </div>
+        </div>
+
+        <div class="card-actions">
+          <a href="devolucao_inbursa_egildo.html" target="_blank" class="btn btn-signed">Com Assinatura</a>
+          <a href="devolucao_inbursa_egildo_sem_assinatura.html" target="_blank" class="btn btn-unsigned">Sem Assinatura</a>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      Banco Inbursa S.A. &copy; 2026. Todos os direitos reservados.
+    </footer>
+  </div>
+
+</body>
+</html>
